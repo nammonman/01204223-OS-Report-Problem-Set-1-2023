@@ -5,10 +5,10 @@ int glob_var1 = 1;
 int glob_var2 = 2;
 int glob_var3 = 3;
 
-void dangerous_function(int*b) {
-    printf("recursive malloc until stack overflow");
-    b = (int*)malloc(999*sizeof(int));
-    dangerous_function(b);
+
+void dangerous_function() {
+    int*b = (int*)malloc(99*sizeof(int));
+    dangerous_function();
 }
 
 void some_function(int i) {
@@ -33,6 +33,7 @@ int main() {
     }
     
     some_function(1);
-    free(b);
+    printf("recursive malloc until stack overflow\n");
+    dangerous_function();
     return 0;
 }
