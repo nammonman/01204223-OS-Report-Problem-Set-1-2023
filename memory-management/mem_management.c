@@ -7,7 +7,7 @@ int glob_var3 = 3;
 
 
 void dangerous_function() {
-    int*b = (int*)malloc(99*sizeof(int));
+    long long int*b = (long long int*)malloc(9999999999*sizeof(long long int));
     dangerous_function();
 }
 
