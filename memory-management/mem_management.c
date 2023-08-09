@@ -12,9 +12,9 @@ void dangerous_function() {
 }
 
 void some_function(int i) {
-    printf("stack depth %d\n",i);
-    if (i < 5)
+if (i <= 5)
     {
+        printf("stack depth %d\n",i);
         printf("address of i variable in some_function: %p\n",&i);
         some_function(i+1);
     }
